@@ -1,0 +1,23 @@
+{
+  "name": "deved-restfulapi-tutorial",
+  "version": "1.0.0",
+  "description": "This is a tutorial about restful apis using express and mongodb from the Youtube Channel Dev Ed > https://youtu.be/vjf774RKrLc",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juanse1595/DevEd-restfulapi-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juanse1595/DevEd-restfulapi-tutorial/issues"
+  },
+  "homepage": "https://github.com/Juanse1595/DevEd-restfulapi-tutorial#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
