@@ -4,7 +4,7 @@
   "description": "This is a tutorial about restful apis using express and mongodb from the Youtube Channel Dev Ed > https://youtu.be/vjf774RKrLc",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
