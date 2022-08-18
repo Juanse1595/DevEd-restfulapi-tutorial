@@ -6,13 +6,20 @@ const app = express();
 
 app.listen(3001);
 
+// MIDDLEWARES > function that will execute when a route is hit
+
+// app.use("/posts", () => {
+//   console.log("this is a middleware");
+// });
+
 // ROUTES
 
-// get endpoint for home route
+// get endpoint for home (/) route
 app.get("/", (req, res) => {
   res.send("This is home boyyyy");
 });
 
+// get endpoint for /posts route
 app.get("/posts", (req, res) => {
   res.send("This is posts.. man");
 });
