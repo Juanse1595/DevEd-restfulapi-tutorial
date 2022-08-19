@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -23,3 +24,9 @@ app.get("/", (req, res) => {
 app.get("/posts", (req, res) => {
   res.send("This is posts.. man");
 });
+
+
+// Connect to DB
+mongoose.connect("mongodb+srv://juanse1595:jspbfc1995@test.fir3x0y.mongodb.net/?retryWrites=true&w=majority", () => {
+  console.log("connected to db");
+})
