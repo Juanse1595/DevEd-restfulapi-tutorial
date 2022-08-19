@@ -1,8 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv/config");
-
 const app = express();
+
+// import routes
+const postsRoute = require("./routes/posts");
+// add middleware to be able to go to posts route
+app.use("/posts", postsRoute);
 
 // Start listening to requests
 
@@ -21,10 +25,7 @@ app.get("/", (req, res) => {
   res.send("This is home boyyyy");
 });
 
-// get endpoint for /posts route
-app.get("/posts", (req, res) => {
-  res.send("This is posts.. man");
-});
+
 
 
 // Connect to DB
