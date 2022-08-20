@@ -15,7 +15,7 @@ app.use("/posts", postsRoute);
 
 // Start listening to requests
 
-app.listen(3001);
+app.listen(3001, () => console.log("API started succesfuly"));
 
 // ROUTES
 // get endpoint for home (/) route
