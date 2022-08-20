@@ -28,14 +28,21 @@ router.post("/", async (req, res) => {
     description: req.body.description
   });
 
-  // saves the post in the DB, .save() returns a Promise it has to be processed... or not really
-  const savedPost = await post.save();
-    // .then(data => {
-    //   res.status(200).json(data);
-    // })
-    // .catch(err => {
-    //   res.status(404).json({ message: err })
-    // })
+  // saves the post in the DB, .save() returns a Promise it has to be processed
+  try {
+    const savedPost = await post.save();
+    res.json(savedPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
+  // 2nd option
+  // post.save()
+  // .then(data => {
+  //   res.status(200).json(data);
+  // })
+  // .catch(err => {
+  //   res.status(404).json({ message: err })
+  // })
 });
 
 module.exports = router;
