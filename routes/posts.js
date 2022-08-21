@@ -10,16 +10,24 @@ more specific uri
 */
 // use: get all the posts
 router.get("/", async (req, res) => {
-  try{
+  try {
     const posts = await Post.find();
     res.json(posts);
-  }catch(err){
-    res.json({message:err})
+  } catch (err) {
+    res.json({ message: err })
   }
 });
 
 // use: get a specific post
-router.get("/:postId", (req,res))
+router.get("/:postId", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.postId);
+    res.json(post);
+    console.log(`get post with id ${req.params.postId}`)
+  } catch (err) {
+    res.json({ message: err });
+  }
+})
 
 // example of subroute of /posts route
 router.get("/specific", (req, res) => {
