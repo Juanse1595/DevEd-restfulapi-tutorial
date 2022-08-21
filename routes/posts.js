@@ -8,9 +8,18 @@ is not necessary to specify here the route, because now router is like the
 representation of the /posts routes, and we can complement it with a
 more specific uri
 */
-router.get("/", (req, res) => {
-  res.send("This is posts.. man");
+// use: get all the posts
+router.get("/", async (req, res) => {
+  try{
+    const posts = await Post.find();
+    res.json(posts);
+  }catch(err){
+    res.json({message:err})
+  }
 });
+
+// use: get a specific post
+router.get("/:postId", (req,res))
 
 // example of subroute of /posts route
 router.get("/specific", (req, res) => {
@@ -20,6 +29,7 @@ router.get("/specific", (req, res) => {
 /*
 post endpoint for /posts. If we want to console.log, we cannot log the body because
 is going to print it as undefined. For that a middleware was added to parse the body.
+use: post a post hehe
 */
 router.post("/", async (req, res) => {
   const post = new Post({
