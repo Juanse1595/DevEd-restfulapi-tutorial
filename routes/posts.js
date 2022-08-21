@@ -29,9 +29,9 @@ router.get("/:postId", async (req, res) => {
   }
 })
 
-// example of subroute of /posts route
-router.get("/specific", (req, res) => {
-  res.send("Specific route mate");
+// example of subroute of /posts route, resutl: /posts/example
+router.get("/example", (req, res) => {
+  res.send("example route mate");
 });
 
 /*
@@ -62,5 +62,15 @@ router.post("/", async (req, res) => {
   //   res.status(404).json({ message: err })
   // })
 });
+
+// Delete endpoint
+router.delete("/:postId", async (req, res) => {
+  try {
+    const targetPost = await Post.remove({ _id: req.params.postId })
+    res.json(targetPost);
+  } catch (err) {
+    res.json({ message: err })
+  }
+})
 
 module.exports = router;
