@@ -1,13 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv/config");
 const app = express();
 
 // import routes
 const postsRoute = require("./routes/posts");
 
-// Middlewares. The order matters
+// Middlewares. THE ORDER OF THE MIDDLEWARES MATTERS
+// middleware for "cors" problem
+app.use(cors());
 // bodyParser will convert the request body to json
 app.use(bodyParser.json());
 // add middleware to be able to go to posts route
